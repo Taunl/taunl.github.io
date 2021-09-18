@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>数论 on Lunat&#39;s Space</title>
+    <link>/zh-cn/categories/%E6%95%B0%E8%AE%BA/</link>
+    <description>Recent content in 数论 on Lunat&#39;s Space</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright © 2020-{year} Lunat. All Rights Reserved.</copyright>
+    <lastBuildDate>Sat, 04 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="/zh-cn/categories/%E6%95%B0%E8%AE%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>逆元</title>
+      <link>/zh-cn/posts/%E9%80%86%E5%85%83/</link>
+      <pubDate>Sat, 04 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/posts/%E9%80%86%E5%85%83/</guid>
+      <description>&lt;p&gt;$x$ 满足 $a\cdot x \equiv 1 \pmod{m} $ ; $x$ 称之为 $a$ 对模 $m$ 的逆，记作 $a^{-1}$&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>逆元 - Lunat&#39;s Space</title><link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/images/favicons/manifest.json">
+<link rel="icon" href="/images/favicons/favicon.ico">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="逆元">
+<meta itemprop="description" content="$x$ 满足 $a\cdot x \equiv 1 \pmod{m} $ ; $x$ 称之为 $a$ 对模 $m$ 的逆，记作 $a^{-1}$"><meta itemprop="datePublished" content="2021-09-04T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-09-04T00:00:00+00:00" />
+<meta itemprop="wordCount" content="415">
+<meta itemprop="keywords" content="逆元," /><meta property="og:title" content="逆元" />
+<meta property="og:description" content="$x$ 满足 $a\cdot x \equiv 1 \pmod{m} $ ; $x$ 称之为 $a$ 对模 $m$ 的逆，记作 $a^{-1}$" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/zh-cn/posts/%E9%80%86%E5%85%83/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-09-04T00:00:00+00:00" /><meta property="og:site_name" content="Lunat&#39;s Space" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="逆元"/>
+<meta name="twitter:description" content="$x$ 满足 $a\cdot x \equiv 1 \pmod{m} $ ; $x$ 称之为 $a$ 对模 $m$ 的逆，记作 $a^{-1}$"/>
+<meta data-name="palette" content="orange"><link rel="preload" href="/css/bundle.min.33fc94a1ae04d943471f154a9e67ba30c5278cef2bf0eb2b8c512d03b011ffbf.css" integrity="sha256-M/yUoa4E2UNHHxVKnme6MMUnjO8r8OsrjFEtA7AR/78=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/css/bundle.min.33fc94a1ae04d943471f154a9e67ba30c5278cef2bf0eb2b8c512d03b011ffbf.css" integrity="sha256-M/yUoa4E2UNHHxVKnme6MMUnjO8r8OsrjFEtA7AR/78=" crossorigin="anonymous"></noscript><script src="/js/bundle.min.6e27190b7355069174437232596e0353b1215e78b0bcba4da46448ed62529c13.js" integrity="sha256-bicZC3NVBpF0Q3IyWW4DU7EhXniwvLpNpGRI7WJSnBM=" crossorigin="anonymous"></script><script defer src="/js/katex.675a54ca18bdabee58c8e458c85196917e0496ce1a5b6f95b6b9cb70d01fe1d8.js" integrity="sha256-Z1pUyhi9q&#43;5YyORYyFGWkX4Els4aW2&#43;VtrnLcNAf4dg=" crossorigin="anonymous"></script>
+</head><body><header><nav class="navbar navbar-expand-xl fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/zh-cn/">
+      <img class="logo" alt="Logo" src="/images/logo.png"
+   width="300" height="300" loading="lazy" />
+Lunat&#39;s Space</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-1 mb-2 mb-lg-0"><form class="search-bar d-flex ms-1" action="/zh-cn/search">
+  <div class="input-group input-group-sm">
+    <button class="btn btn-search disabled position-absolute left-0" type="submit" aria-label="submit"><i class="fas fa-fw fa-search"></i></button>
+    <input class="form-control rounded-pill" id="searchQuery" name="q" type="search" aria-label="Search">
+  </div>
+</form></ul><ul class="navbar-nav me-1 mb-2 mb-lg-0 me-1 ms-auto"><li class="nav-item">
+          <a class="nav-link" href="/zh-cn/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>归档
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/zh-cn/categories/">
+            <i class="fas fa-fw fa-folder"></i>分类
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/zh-cn/tags/">
+            <i class="fas fa-fw fa-tags"></i>标签
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/zh-cn/series/">
+            <i class="fas fa-fw fa-columns"></i>专栏
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdown-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>链接
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-dropdown"><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">
+                themes
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://youzack.com" target="_blank" rel="noopener noreferrer">
+                youzack
+              </a>
+            </li></ul>
+        </li><li class="nav-item dropdown">
+  <a class="nav-link" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fas fa-fw fa-language"></i> 简体中文
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="languageDropdown"><li><a class="dropdown-item" href="/en/">English</a></li></ul>
+</li><li class="nav-item">
+  <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasSettings" role="button"
+    aria-controls="offcanvasSettings">
+    <i class="fas fa-fw fa-sliders-h"></i> 设置
+  </a>
+</li>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings"
+  aria-labelledby="offcanvasSettingsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" w id="offcanvasSettingsLabel"><i class="fas fa-fw fa-sliders-h"></i> 设置</h5>
+    <a role="button" data-bs-dismiss="offcanvas" aria-label="Close">
+      <span class="fas fa-2x fa-fw fa-times"></span>
+    </a>
+  </div>
+  <div class="offcanvas-body"><section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字体大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <span id="btnPalette" class="btn btn-sm"><i class="fas fa-eye-dropper"></i></span>
+    </div>
+  </form>
+  <div class="container mt-2 visually-hidden" id="palettePicker">
+    <div class="btn-group"><button type="button" id="palette-blue" title="蓝色" 
+          class="btn btn-sm palette bg-blue d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-blue-gray" title="蓝灰色" 
+          class="btn btn-sm palette bg-blue-gray d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-brown" title="棕色" 
+          class="btn btn-sm palette bg-brown d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-cyan" title="青色" 
+          class="btn btn-sm palette bg-cyan d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-green" title="绿色" 
+          class="btn btn-sm palette bg-green d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-indigo" title="靛青色" 
+          class="btn btn-sm palette bg-indigo d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-orange" title="橙色" 
+          class="btn btn-sm palette bg-orange d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-pink" title="粉色" 
+          class="btn btn-sm palette bg-pink d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-purple" title="紫色" 
+          class="btn btn-sm palette bg-purple d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-red" title="红色" 
+          class="btn btn-sm palette bg-red d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-teal" title="蓝绿色" 
+          class="btn btn-sm palette bg-teal d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-yellow" title="黄色" 
+          class="btn btn-sm palette bg-yellow d-flex align-items-center justify-content-center">
+        </button></button>
+    </div>
+  </div>
+</section></div>
+</div></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row" aria-label="breadcrumb">
+  <ol class="breadcrumb surface"><li class="breadcrumb-item"><a href="/zh-cn/">主页</a></li><li class="breadcrumb-item"><a href="/zh-cn/posts/">文章</a></li><li class="breadcrumb-item active">逆元</li></ol>
+</nav><article class="post row surface"><div class="post-panel-wrapper">
+  <div class="post-panel d-flex flex-column">
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button">
+  <i class="fas fa-fw fa-expand-alt fa-rotate-45"></i>
+</a>
+  
+    
+
+    
+    <a class="action" data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+  data-bs-trigger="focus" tabindex="0"
+  data-bs-content="&lt;a target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&#34;&gt;CC BY-NC-ND 4.0 &lt;i class=&#34;fab fa-fw fa-creative-commons&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-by&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nc&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nd&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a id="btnTOC" class="fas fa-fw fa-list-alt" data-bs-toggle="offcanvas" href="#offcanvasTOC" aria-controls="offcanvasTOC" role="button">
+</a>
+  </div>
+</div>
+<h1 class="post-title my-3">逆元
+</h1><div class="post-meta mb-3"><span class="post-date me-2">
+    <i class="fas fa-fw fa-calendar-alt"></i>2021-09-04
+  </span><span class="post-taxonomies"><a href="/zh-cn/categories/%E6%95%B0%E8%AE%BA/" class="post-taxonomy">数论</a><a href="/zh-cn/tags/%E9%80%86%E5%85%83/" class="post-taxonomy">逆元</a></span>
+</div>
+<div class="offcanvas offcanvas-end surface" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasTOCLabel">目录</h5>
+    <a role="button" data-bs-dismiss="offcanvas" aria-label="Close">
+      <span class="fas fa-2x fa-fw fa-times"></span>
+    </a>
+  </div>
+  <div class="offcanvas-body">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#性质">性质</a></li>
+    <li><a href="#逆元的求解">逆元的求解</a>
+      <ul>
+        <li><a href="#扩展欧几里得算法">扩展欧几里得算法</a></li>
+        <li><a href="#费马小定理">费马小定理</a></li>
+        <li><a href="#fermat-euler-定理">Fermat-Euler 定理</a></li>
+        <li><a href="#线性递推">线性递推</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div><div class="post-content mb-3"><p>$x$ 满足 $a\cdot x \equiv 1 \pmod{m} $ ; $x$ 称之为 $a$ 对模 $m$ 的逆，记作 $a^{-1}$</p>
+<h2 id="性质">性质</h2>
+<ol>
+<li>若 $\gcd(a, m) = 1$ $\iff$ $a$ 在模 $m$ 下有逆元</li>
+</ol>
+<h2 id="逆元的求解">逆元的求解</h2>
+<h3 id="扩展欧几里得算法">扩展欧几里得算法</h3>
+<p>设 $a\cdot x + m\cdot y = 1$</p>
+<p>$a\cdot x = 1-m\cdot y \equiv 1 \pmod m$</p>
+<p>$x$ 是 $a$ 对 $m$ 的逆元，问题转化为求方程 $a\cdot x + m\cdot y = 1$ 的正整数解</p>
+<p>$\gcd(a,m) = 1$ 方程必有解，扩展欧几里得算法跑一下方程，求出 $x$ 再模 $p$ 处理</p>
+<p>复杂度 $\mathcal{O}(\log_2^n)$</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="ln">1</span><span class="kt">int</span> <span class="nf">exgcd</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">x</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">y</span><span class="p">)</span>
+<span class="ln">2</span><span class="p">{</span>
+<span class="ln">3</span>    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="k">return</span> <span class="n">a</span><span class="p">;</span> <span class="p">}</span>
+<span class="ln">4</span>    <span class="kt">int</span> <span class="n">g</span> <span class="o">=</span> <span class="n">exgcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span><span class="o">%</span><span class="n">b</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+<span class="ln">5</span>    <span class="n">y</span> <span class="o">-=</span> <span class="n">a</span><span class="o">/</span><span class="n">b</span><span class="o">*</span><span class="n">x</span><span class="p">;</span>
+<span class="ln">6</span>    <span class="k">return</span> <span class="n">g</span><span class="p">;</span>
+<span class="ln">7</span><span class="p">}</span>
+</code></pre></div><h3 id="费马小定理">费马小定理</h3>
+<p>$\tau(p)=2,\ \gcd(a,p) =1 \implies a^{p-1}\equiv 1 \pmod p$</p>
+<p>$a*a^{p-2} \equiv 1\pmod p,\ a$ 在模 $p$ 下的逆元为 $a^{p-2}$</p>
+<p>快速幂求 $a^{p-2}$ 即可</p>
+<p>复杂度 $\mathcal{O}(\log_2^n)$</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="ln">1</span><span class="kt">int</span> <span class="nf">qp</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">,</span> <span class="kt">int</span> <span class="n">p</span><span class="p">)</span> <span class="c1">//qp = quick power
+</span><span class="ln">2</span><span class="c1"></span><span class="p">{</span>
+<span class="ln">3</span>    <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">b</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+<span class="ln">4</span>    <span class="k">if</span><span class="p">(</span><span class="n">b</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">)</span> <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="n">qp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">a</span><span class="o">%</span><span class="n">p</span><span class="p">,</span> <span class="n">b</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span><span class="o">%</span><span class="n">p</span><span class="p">;</span>
+<span class="ln">5</span>    <span class="k">else</span> <span class="k">return</span> <span class="n">qp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">a</span><span class="o">%</span><span class="n">p</span><span class="p">,</span> <span class="n">b</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span><span class="o">%</span><span class="n">p</span><span class="p">;</span>
+<span class="ln">6</span><span class="p">}</span>
+<span class="ln">7</span><span class="kt">int</span> <span class="n">ie</span> <span class="o">=</span> <span class="n">qp</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">p</span><span class="p">);</span> <span class="c1">//ie = inverse element
+</span></code></pre></div><h3 id="fermat-euler-定理">Fermat-Euler 定理</h3>
+<p>$\gcd(a,m) = 1$ 时 $a^{\varphi(m)} \equiv 1 \pmod m$</p>
+<p>所以 $a^{\varphi(m)-1}$ 是 $a$ 在模 $m$ 下的逆元</p>
+<p>需要求 $\varphi(m)$，再用快速幂求 $a^{\varphi(m)-1}$</p>
+<p>不推荐</p>
+<h3 id="线性递推">线性递推</h3>
+<p>求 $\forall{a},a\in[1,p-1]$ ，模 $p$ 的逆元</p>
+<p>令 $ax + b = p;\ b\cdot b^{-1} \equiv 1 \pmod p$</p>
+<p>$\because b = p-ax$</p>
+<p>$\therefore (p-ax)\cdot b^{-1} \equiv 1 \pmod p \implies a\cdot(-x\cdot b^{-1}) \equiv 1 \pmod p$</p>
+<p>$\therefore a^{-1}\equiv (-x\cdot b^{-1}) \equiv (p-x)\cdot b^{-1} \pmod p$</p>
+<p>$a &gt; b$ 直接动态规划扫一遍就好了</p>
+<p>在计算机中 $b$ 表示为 <code>p%a</code>，$x$ 表示为 <code>p/a</code></p>
+<p>复杂度 $\mathcal{O}(n)$</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="ln">1</span><span class="kt">int</span> <span class="n">inv</span><span class="p">[</span><span class="n">p</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">};</span> <span class="c1">//inv = inverse element
+</span><span class="ln">2</span><span class="c1"></span><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+<span class="ln">3</span>    <span class="n">inv</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="n">p</span><span class="o">/</span><span class="n">i</span><span class="p">)</span> <span class="o">*</span> <span class="n">inv</span><span class="p">[</span><span class="n">p</span><span class="o">%</span><span class="n">i</span><span class="p">]</span> <span class="o">%</span> <span class="n">p</span><span class="p">;</span>
+<span class="ln">4</span><span class="p">}</span>
+</code></pre></div></div><hr /><div class="post-navs d-flex mb-3 justify-content-between">
+  <div class="post-nav w-50"></div>
+  <div class="post-nav flex-row-reverse"><div class="next-post btn btn-sm">
+      <a href="/zh-cn/posts/%E5%BF%AB%E9%80%9F%E4%B9%98/">快速乘
+</a>
+    </div></div>
+</div></article><div class="post-comments surface row"><script src="https://utteranc.es/client.js"
+  repo="razonyang/hugo-theme-bootstrap-comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container"><section class="profile surface row text-center">
+  <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="Lunat" src="/images/profile.png"
+   width="421" height="423" loading="lazy" />
+</div>
+  <div class="col-12 profile-meta"><div class="profile-name">Lunat</div><div class="profile-bio">Acmer, Cer</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>SIT</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>Shanghai, China</div></div>
+</section>
+  <section class="featured-posts row surface">
+    <h4>精选文章</h4>
+    <ul><li><a href="/zh-cn/posts/%E5%BF%AB%E9%80%9F%E4%B9%98/">快速乘
+</a></li><li><a href="/zh-cn/posts/%E9%80%86%E5%85%83/">逆元
+</a></li></ul>
+  </section><section class="recent-posts row surface">
+  <h4>最近文章</h4>
+  <ul><li><a href="/zh-cn/posts/%E5%BF%AB%E9%80%9F%E4%B9%98/">快速乘
+</a></li><li><a href="/zh-cn/posts/%E9%80%86%E5%85%83/">逆元
+</a></li></ul>
+</section><section class="taxonomy-categories row surface">
+      <h4>
+        <a href="/zh-cn/categories">分类</a>
+      </h4>
+      <div><a href="/zh-cn/categories/misc/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="MISC">
+          MISC <span class="badge rounded-pill">1</span>
+        </a><a href="/zh-cn/categories/%E6%95%B0%E8%AE%BA/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="数论">
+          数论 <span class="badge rounded-pill">1</span>
+        </a></div>
+    </section><section class="taxonomy-series row surface">
+      <h4>
+        <a href="/zh-cn/series">专栏</a>
+      </h4>
+      <div><a href="/zh-cn/series/%E5%BA%95%E5%B1%82%E4%BC%98%E5%8C%96/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="底层优化">
+          底层优化 <span class="badge rounded-pill">1</span>
+        </a></div>
+    </section><section class="taxonomy-tags row surface">
+      <h4>
+        <a href="/zh-cn/tags">标签</a>
+      </h4>
+      <div><a href="/zh-cn/tags/math/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="Math">
+          Math <span class="badge rounded-pill">1</span>
+        </a><a href="/zh-cn/tags/%E9%80%86%E5%85%83/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="逆元">
+          逆元 <span class="badge rounded-pill">1</span>
+        </a></div>
+    </section></div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" href="mailto:im.lunat@outlook.com" title="Email">
+      <i class="fas fa-fw fa-2x fa-envelope"></i>
+    </a><a class="nav-link social-link" target="_blank" href="https://github.com/Taunl" title="GitHub" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-github"></i>
+      </a></nav>
+<div class="copyright mb-2">
+  Copyright © 2020-2021 Lunat. All Rights Reserved.
+</div>
+<div class="powered-by mb-2">
+  Powered by <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a> and the <a href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">Bootstrap</a> theme.
+</div></footer>
+<a id="btnScrollToTop" class="btn-scroll-to-top">
+  <i class="fas fa-fw fa-chevron-circle-up fa-2x"></i>
+</a>
+</body>
+</html>
