@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>标签 on Lunat&#39;s Space</title>
+    <link>/zh-cn/tags/</link>
+    <description>Recent content in 标签 on Lunat&#39;s Space</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>Copyright © 2020-{year} Lunat. All Rights Reserved.</copyright>
+    <lastBuildDate>Sun, 05 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="/zh-cn/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Math</title>
+      <link>/zh-cn/tags/math/</link>
+      <pubDate>Sun, 05 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>逆元</title>
+      <link>/zh-cn/tags/%E9%80%86%E5%85%83/</link>
+      <pubDate>Sat, 04 Sep 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/tags/%E9%80%86%E5%85%83/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
