@@ -12,7 +12,7 @@
 <meta name="description" content="" /><meta itemprop="name" content="快速乘">
 <meta itemprop="description" content="用来求解 r=a*b%p 中的 a*b 超过 long long 范围导致爆 long long 的算法，其中 a，b，p，r 均为 long long  类型"><meta itemprop="datePublished" content="2021-09-05T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2021-09-05T00:00:00+00:00" />
-<meta itemprop="wordCount" content="770">
+<meta itemprop="wordCount" content="771">
 <meta itemprop="keywords" content="Math," /><meta property="og:title" content="快速乘" />
 <meta property="og:description" content="用来求解 r=a*b%p 中的 a*b 超过 long long 范围导致爆 long long 的算法，其中 a，b，p，r 均为 long long  类型" />
 <meta property="og:type" content="article" />
@@ -24,8 +24,8 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="快速乘"/>
 <meta name="twitter:description" content="用来求解 r=a*b%p 中的 a*b 超过 long long 范围导致爆 long long 的算法，其中 a，b，p，r 均为 long long  类型"/>
-<meta data-name="palette" content="orange"><link rel="preload" href="/css/bundle.min.a7386721739075b9d52c59ca1eac802b1957a4e37ecb953f28dc9b7b74356101.css" integrity="sha256-pzhnIXOQdbnVLFnKHqyAKxlXpON&#43;y5U/KNybe3Q1YQE=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="/css/bundle.min.a7386721739075b9d52c59ca1eac802b1957a4e37ecb953f28dc9b7b74356101.css" integrity="sha256-pzhnIXOQdbnVLFnKHqyAKxlXpON&#43;y5U/KNybe3Q1YQE=" crossorigin="anonymous"></noscript><script src="/js/bundle.min.6e27190b7355069174437232596e0353b1215e78b0bcba4da46448ed62529c13.js" integrity="sha256-bicZC3NVBpF0Q3IyWW4DU7EhXniwvLpNpGRI7WJSnBM=" crossorigin="anonymous"></script><script defer src="/js/katex.675a54ca18bdabee58c8e458c85196917e0496ce1a5b6f95b6b9cb70d01fe1d8.js" integrity="sha256-Z1pUyhi9q&#43;5YyORYyFGWkX4Els4aW2&#43;VtrnLcNAf4dg=" crossorigin="anonymous"></script>
+<meta data-name="palette" content="orange"><link rel="preload" href="/css/bundle.min.27076e7d30fbf3e581e572ff9cacc5f6792ad9b03d52087ae231d14854ef2f5f.css" integrity="sha256-JwdufTD78&#43;WB5XL/nKzF9nkq2bA9Ugh64jHRSFTvL18=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/css/bundle.min.27076e7d30fbf3e581e572ff9cacc5f6792ad9b03d52087ae231d14854ef2f5f.css" integrity="sha256-JwdufTD78&#43;WB5XL/nKzF9nkq2bA9Ugh64jHRSFTvL18=" crossorigin="anonymous"></noscript><script src="/js/bundle.min.6e27190b7355069174437232596e0353b1215e78b0bcba4da46448ed62529c13.js" integrity="sha256-bicZC3NVBpF0Q3IyWW4DU7EhXniwvLpNpGRI7WJSnBM=" crossorigin="anonymous"></script><script defer src="/js/katex.675a54ca18bdabee58c8e458c85196917e0496ce1a5b6f95b6b9cb70d01fe1d8.js" integrity="sha256-Z1pUyhi9q&#43;5YyORYyFGWkX4Els4aW2&#43;VtrnLcNAf4dg=" crossorigin="anonymous"></script>
 </head><body><header><nav class="navbar navbar-expand-xl fixed-top">
   <div class="container">
     <a class="navbar-brand" href="/zh-cn/">
@@ -209,7 +209,7 @@ $$</p>
 <span class="ln">5</span><span class="p">}</span>
 </code></pre></div><p>假如不考虑浮点数精度问题，以上代码则可直接求出 <code>a*b%p</code> 的准确值，但是 <code>long double</code> 并不能很好的表示整数部分。其整数部分会产生 <code>-1, +1, 0</code> 三类的偏差。比如 $5$ 被表示成 $4.99999\cdots$ 其整数部分少了$1$，$1.9999999999\cdots$ 表示成 $2.000000000$，其整数部分多了 $1$，反映到结果上有：</p>
 <p>$p\cdot\lfloor\frac{a}{p}\cdot b\rfloor\bmod m \to p\cdot(\lfloor\frac{a}{p}\cdot b\rfloor + x)\bmod m,\ x\in(-1,0,1) $</p>
-<p>显然无论 $x$ 取何值，结果 $\bmod p$ 都是不变的，假设正确答案是 $rest$ 那么上述代码得到的结果为</p>
+<p>显然无论 $x$ 取何值，结果 $\bmod \ p$ 都是不变的，假设正确答案是 $rest$ 那么上述代码得到的结果为</p>
 <p>$(rest+p\cdot x)\bmod 2^{64},\ x\in(-1,1,0),\ rest\in[0,p-1]$</p>
 <p>模 $2^{64}$ 在计算机中不是表示成 $[0, 2^{64}-1]$ 而是表示成 $[-2^{63}, 2^{63}-1]$</p>
 <p>所以当 $x$ 为 $-1$ 时 上述代码变成了个负数，结果出错，需 <code>+p</code> 后为正确答案</p>
