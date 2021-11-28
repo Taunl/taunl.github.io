@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>Copyright © 2020-{year} Lunat. All Rights Reserved.</copyright>
-    <lastBuildDate>Sun, 05 Sep 2021 00:00:00 +0000</lastBuildDate><atom:link href="/zh-cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Nov 2021 00:00:00 +0000</lastBuildDate><atom:link href="/zh-cn/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>应用数理统计理论篇考试教程</title>
+      <link>/zh-cn/posts/%E5%BA%94%E7%94%A8%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sun, 28 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/posts/%E5%BA%94%E7%94%A8%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E5%9F%BA%E7%A1%80/</guid>
+      <description>&lt;p&gt;本文档用于临时记录数理统计理论篇考试习题。&lt;/p&gt;</description>
+    </item>
+    
     <item>
       <title>快速乘</title>
       <link>/zh-cn/posts/%E5%BF%AB%E9%80%9F%E4%B9%98/</link>
@@ -24,6 +33,15 @@
       
       <guid>/zh-cn/posts/%E9%80%86%E5%85%83/</guid>
       <description>&lt;p&gt;$x$ 满足 $a\cdot x \equiv 1 \pmod{m} $ ; $x$ 称之为 $a$ 对模 $m$ 的逆，记作 $a^{-1}$&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>/zh-cn/posts/untitled/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/zh-cn/posts/untitled/</guid>
+      <description></description>
     </item>
     
   </channel>
