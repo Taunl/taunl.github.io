@@ -1,29 +1,33 @@
 <!doctype html>
 <html lang="zh-cn">
   <head>
-	<meta name="generator" content="Hugo 0.88.1" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lunat&#39;s Space</title><link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png" sizes="180x180">
+    <title>Markdown文本处理 - Lunat&#39;s Space</title><link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png" sizes="180x180">
 <link rel="icon" href="/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
 <link rel="manifest" href="/images/favicons/manifest.json">
 <link rel="icon" href="/images/favicons/favicon.ico">
-<meta name="keywords" content="Hugo, Bootstrap, 博客主题" />
-<meta name="description" content="一个极快、响应式和功能丰富的 Hugo 博客主题" /><meta itemprop="name" content="Lunat&#39;s Space">
-<meta itemprop="description" content="一个极快、响应式和功能丰富的 Hugo 博客主题"><meta property="og:title" content="Lunat&#39;s Space" />
-<meta property="og:description" content="一个极快、响应式和功能丰富的 Hugo 博客主题" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="/zh-cn/" /><meta property="og:site_name" content="Lunat&#39;s Space" />
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="Markdown文本处理">
+<meta itemprop="description" content="介绍Markdown的一些字处理，包括字体、颜色、背景颜色、大小、排版。"><meta itemprop="datePublished" content="2021-11-30T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-11-30T00:00:00+00:00" />
+<meta itemprop="wordCount" content="444">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="Markdown文本处理" />
+<meta property="og:description" content="介绍Markdown的一些字处理，包括字体、颜色、背景颜色、大小、排版。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/zh-cn/posts/%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-11-30T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-11-30T00:00:00+00:00" /><meta property="og:site_name" content="Lunat&#39;s Space" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Lunat&#39;s Space"/>
-<meta name="twitter:description" content="一个极快、响应式和功能丰富的 Hugo 博客主题"/>
-<link rel="alternate" type="application/rss+xml" href="/zh-cn/index.xml" title="Lunat's Space" /><meta data-name="palette" content="orange"><link rel="preload" href="/css/bundle.min.96c7ecd5192cdfccc067563fff8b61a844c2b7137b9180d97518f5027dcd99f0.css" integrity="sha256-lsfs1Rks38zAZ1Y//4thqETCtxN7kYDZdRj1An3NmfA=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<meta name="twitter:title" content="Markdown文本处理"/>
+<meta name="twitter:description" content="介绍Markdown的一些字处理，包括字体、颜色、背景颜色、大小、排版。"/>
+<meta data-name="palette" content="orange"><link rel="preload" href="/css/bundle.min.96c7ecd5192cdfccc067563fff8b61a844c2b7137b9180d97518f5027dcd99f0.css" integrity="sha256-lsfs1Rks38zAZ1Y//4thqETCtxN7kYDZdRj1An3NmfA=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="/css/bundle.min.96c7ecd5192cdfccc067563fff8b61a844c2b7137b9180d97518f5027dcd99f0.css" integrity="sha256-lsfs1Rks38zAZ1Y//4thqETCtxN7kYDZdRj1An3NmfA=" crossorigin="anonymous"></noscript><script src="/js/bundle.min.a0d9c85afc027d25bf6dd51223e376b90beab71e878a8a8715d944213a9b5b3c.js" integrity="sha256-oNnIWvwCfSW/bdUSI&#43;N2uQvqtx6HioqHFdlEITqbWzw=" crossorigin="anonymous"></script><script defer src="/js/katex.675a54ca18bdabee58c8e458c85196917e0496ce1a5b6f95b6b9cb70d01fe1d8.js" integrity="sha256-Z1pUyhi9q&#43;5YyORYyFGWkX4Els4aW2&#43;VtrnLcNAf4dg=" crossorigin="anonymous"></script>
 </head><body><header><nav class="navbar navbar-expand-xl fixed-top">
   <div class="container">
-    <a class="navbar-brand active" href="/zh-cn/">
+    <a class="navbar-brand" href="/zh-cn/">
       <img class="logo" alt="Logo" src="/images/logo.png"
    width="300" height="300" loading="lazy" />
 Lunat&#39;s Space</a>
@@ -156,50 +160,73 @@ Lunat&#39;s Space</a>
 <main role="main" class="container">
       <div class="row content">
 <div class="col-lg-8">
-  <div class="container"><div class="posts mb-4"><article class="post row surface">
-      <h2 class="post-title mb-4"><a href="/zh-cn/posts/%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86/">Markdown文本处理
-</a></h2><div class="post-meta mb-3"><span class="post-date me-2">
+  <div class="container"><nav class="row" aria-label="breadcrumb">
+  <ol class="breadcrumb surface"><li class="breadcrumb-item"><a href="/zh-cn/">主页</a></li><li class="breadcrumb-item"><a href="/zh-cn/posts/">文章</a></li><li class="breadcrumb-item active">Markdown文本处理</li></ol>
+</nav><article class="post row surface"><div class="post-panel-wrapper">
+  <div class="post-panel d-flex flex-column">
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button">
+  <i class="fas fa-fw fa-expand-alt fa-rotate-45"></i>
+</a>
+  
+    
+
+    
+    <a class="action" data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+  data-bs-trigger="focus" tabindex="0"
+  data-bs-content="&lt;a target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&#34;&gt;CC BY-NC-ND 4.0 &lt;i class=&#34;fab fa-fw fa-creative-commons&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-by&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nc&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nd&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    
+  </div>
+</div>
+<h1 class="post-title my-3">Markdown文本处理
+</h1><div class="post-meta mb-3"><span class="post-date me-2">
     <i class="fas fa-fw fa-calendar-alt"></i>2021-11-30
   </span><span class="post-taxonomies"><a href="/zh-cn/categories/html/" class="post-taxonomy">HTML</a></span>
 </div>
-<div class="post-summary mb-3">
-        
-        <p>介绍Markdown的一些字处理，包括字体、颜色、背景颜色、大小、排版。</p>
-      </div>
-    </article><article class="post row surface">
-      <h2 class="post-title mb-4"><a href="/zh-cn/posts/%E5%BA%94%E7%94%A8%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E5%9F%BA%E7%A1%80/">应用数理统计理论篇考试教程
-</a></h2><div class="post-meta mb-3"><span class="post-date me-2">
-    <i class="fas fa-fw fa-calendar-alt"></i>2021-11-28
-  </span><span class="post-taxonomies"><a href="/zh-cn/categories/temp/" class="post-taxonomy">temp</a><a href="/zh-cn/tags/math/" class="post-taxonomy">Math</a></span>
-</div>
-<div class="post-summary mb-3">
-        
-        <p>本文档用于临时记录数理统计理论篇考试习题。</p>
-      </div>
-    </article><article class="post row surface">
-      <h2 class="post-title mb-4"><a href="/zh-cn/posts/%E5%BF%AB%E9%80%9F%E4%B9%98/">快速乘
-</a></h2><div class="post-meta mb-3"><span class="post-date me-2">
-    <i class="fas fa-fw fa-calendar-alt"></i>2021-09-05
-  </span><span class="post-taxonomies"><a href="/zh-cn/categories/misc/" class="post-taxonomy">MISC</a><a href="/zh-cn/series/%E5%BA%95%E5%B1%82%E4%BC%98%E5%8C%96/" class="post-taxonomy">底层优化</a><a href="/zh-cn/tags/math/" class="post-taxonomy">Math</a></span>
-</div>
-<div class="post-summary mb-3">
-        
-        <p>用来求解 <code>r=a*b%p</code> 中的 <code>a*b</code> 超过 <code>long long</code> 范围导致爆 <code>long long</code> 的算法，其中 <code>a</code>，<code>b</code>，<code>p</code>，<code>r</code> 均为 <code>long long</code>  类型</p>
-      </div>
-    </article><article class="post row surface">
-      <h2 class="post-title mb-4"><a href="/zh-cn/posts/%E9%80%86%E5%85%83/">逆元
-</a></h2><div class="post-meta mb-3"><span class="post-date me-2">
-    <i class="fas fa-fw fa-calendar-alt"></i>2021-09-04
-  </span><span class="post-taxonomies"><a href="/zh-cn/categories/%E6%95%B0%E8%AE%BA/" class="post-taxonomy">数论</a><a href="/zh-cn/tags/%E9%80%86%E5%85%83/" class="post-taxonomy">逆元</a></span>
-</div>
-<div class="post-summary mb-3">
-        
-        <p>$x$ 满足 $a\cdot x \equiv 1 \pmod{m} $ ; $x$ 称之为 $a$ 对模 $m$ 的逆，记作 $a^{-1}$</p>
-      </div>
-    </article></div><div class="row table-responsive mb-3"></div>
-</div>
-
-
+<div class="post-content mb-3"><p>介绍Markdown的一些字处理，包括字体、颜色、背景颜色、大小、排版。</p>
+<h4 id="1-字体颜色">1 字体颜色</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="ln">1</span><span class="p">&lt;</span><span class="nt">font</span> <span class="na">color</span><span class="o">=</span><span class="s">&#34;red&#34;</span><span class="p">&gt;</span>红色<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
+</code></pre></div><p><font color="red">红色</font></p>
+<h4 id="2-字体">2 字体</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="ln">1</span><span class="p">&lt;</span><span class="nt">font</span> <span class="na">face</span><span class="o">=</span><span class="s">&#34;STCAIYUN&#34;</span><span class="p">&gt;</span>华文彩云<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
+</code></pre></div><p><font face="STCAIYUN">华文彩云</font></p>
+<h4 id="3-字体大小">3 字体大小</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="ln">1</span><span class="p">&lt;</span><span class="nt">font</span> <span class="na">size</span><span class="o">=</span><span class="s">&#34;5&#34;</span><span class="p">&gt;</span>我的大小为5哦<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
+</code></pre></div><p><font size="5">我的大小为5哦</font>我是正常尺寸</p>
+<h4 id="4-字体背景颜色">4 字体背景颜色</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="ln">1</span><span class="p">&lt;</span><span class="nt">font</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;background:red&#34;</span><span class="p">&gt;</span>我有黄颜色背景<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
+<span class="ln">2</span><span class="p">&lt;</span><span class="nt">font</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;background-color:red&#34;</span><span class="p">&gt;</span>我有黄颜色背景<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>
+</code></pre></div><p><font style="background:yellow">我有黄颜色背景</font></p>
+<h4 id="5-css-style-代替font标签">5 CSS-Style 代替font标签</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="ln">1</span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;color:red; background-color:yellow; font-size: 22pt; font-family:STCAIYUN;&#34;</span><span class="p">&gt;</span>Lunat<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</code></pre></div><p><span style="color:red; background-color:yellow; font-size: 22pt; font-family:STCAIYUN;">Lunat</span></p>
+<h4 id="6-文本居中">6 文本居中</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="ln">1</span><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;text-align:center;&#34;</span><span class="p">&gt;</span>我在中间<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</code></pre></div><p style="text-align:center;">我在中间</p>
+<h4 id="7-mark-文本">7 mark 文本</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="ln">1</span><span class="p">&lt;</span><span class="nt">mark</span><span class="p">&gt;</span>mark文本<span class="p">&lt;/</span><span class="nt">mark</span><span class="p">&gt;</span>
+</code></pre></div><p><mark>mark文本</mark></p></div><hr /><div class="post-navs d-flex mb-3 justify-content-between">
+  <div class="post-nav w-50"><div class="prev-post btn btn-sm">
+      <a href="/zh-cn/posts/%E5%BA%94%E7%94%A8%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E5%9F%BA%E7%A1%80/">应用数理统计理论篇考试教程
+</a>
+    </div></div>
+  <div class="post-nav flex-row-reverse"></div>
+</div><section class="related-posts">
+    <h3>相关文章</h3>
+    <ul class="related-posts"><li><a href="/zh-cn/posts/%E5%BA%94%E7%94%A8%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E5%9F%BA%E7%A1%80/">应用数理统计理论篇考试教程
+</a></li><li><a href="/zh-cn/posts/%E5%BF%AB%E9%80%9F%E4%B9%98/">快速乘
+</a></li><li><a href="/zh-cn/posts/%E9%80%86%E5%85%83/">逆元
+</a></li></ul>
+  </section></article><div class="post-comments surface row"><script src="https://utteranc.es/client.js"
+  repo="Taunl/blog-comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div></div>
 </div><aside class="col-lg-4 sidebar d-flex">
   <div class="container"><section class="profile surface row text-center">
   <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="Lunat" src="/images/profile.png"
@@ -255,9 +282,7 @@ Lunat&#39;s Space</a>
       <i class="fas fa-fw fa-2x fa-envelope"></i>
     </a><a class="nav-link social-link" target="_blank" href="https://github.com/Taunl" title="GitHub" rel="noopener noreferrer">
         <i class="fa-fw fa-2x fab fa-github"></i>
-      </a><a class="nav-link social-link" target="_blank" href="/zh-cn/index.xml" title="RSS" rel="noopener noreferrer">
-      <i class="fas fa-fw fa-2x fa-rss"></i>
-    </a></nav>
+      </a></nav>
 <div class="copyright mb-2">
   Copyright © 2020-2021 Lunat. All Rights Reserved.
 </div>
