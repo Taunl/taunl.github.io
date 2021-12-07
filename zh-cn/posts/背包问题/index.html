@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>背包九讲-前三讲 - Lunat&#39;s Space</title><link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/images/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/images/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/images/favicons/manifest.json">
+<link rel="icon" href="/images/favicons/favicon.ico">
+<meta name="keywords" content="" />
+<meta name="description" content="" /><meta itemprop="name" content="背包九讲-前三讲">
+<meta itemprop="description" content="介绍背包九讲中的 0-1背包，完全背包，多重背包问题。"><meta itemprop="datePublished" content="2021-12-07T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2021-12-07T00:00:00+00:00" />
+<meta itemprop="wordCount" content="953">
+<meta itemprop="keywords" content="动态规划," /><meta property="og:title" content="背包九讲-前三讲" />
+<meta property="og:description" content="介绍背包九讲中的 0-1背包，完全背包，多重背包问题。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/zh-cn/posts/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-12-07T00:00:00+00:00" /><meta property="og:site_name" content="Lunat&#39;s Space" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="背包九讲-前三讲"/>
+<meta name="twitter:description" content="介绍背包九讲中的 0-1背包，完全背包，多重背包问题。"/>
+<meta data-name="palette" content="orange"><link rel="preload" href="/css/bundle.min.96c7ecd5192cdfccc067563fff8b61a844c2b7137b9180d97518f5027dcd99f0.css" integrity="sha256-lsfs1Rks38zAZ1Y//4thqETCtxN7kYDZdRj1An3NmfA=" crossorigin="anonymous" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/css/bundle.min.96c7ecd5192cdfccc067563fff8b61a844c2b7137b9180d97518f5027dcd99f0.css" integrity="sha256-lsfs1Rks38zAZ1Y//4thqETCtxN7kYDZdRj1An3NmfA=" crossorigin="anonymous"></noscript><script src="/js/bundle.min.a0d9c85afc027d25bf6dd51223e376b90beab71e878a8a8715d944213a9b5b3c.js" integrity="sha256-oNnIWvwCfSW/bdUSI&#43;N2uQvqtx6HioqHFdlEITqbWzw=" crossorigin="anonymous"></script><script defer src="/js/katex.675a54ca18bdabee58c8e458c85196917e0496ce1a5b6f95b6b9cb70d01fe1d8.js" integrity="sha256-Z1pUyhi9q&#43;5YyORYyFGWkX4Els4aW2&#43;VtrnLcNAf4dg=" crossorigin="anonymous"></script>
+</head><body><header><nav class="navbar navbar-expand-xl fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/zh-cn/">
+      <img class="logo" alt="Logo" src="/images/logo.png"
+   width="300" height="300" loading="lazy" />
+Lunat&#39;s Space</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-1 mb-2 mb-lg-0"><form class="search-bar d-flex ms-1" action="/zh-cn/search">
+  <div class="input-group input-group-sm">
+    <button class="btn btn-search disabled position-absolute left-0" type="submit" aria-label="submit"><i class="fas fa-fw fa-search"></i></button>
+    <input class="form-control rounded-pill" id="searchQuery" name="q" type="search" aria-label="Search">
+  </div>
+</form></ul><ul class="navbar-nav me-1 mb-2 mb-lg-0 me-1 ms-auto"><li class="nav-item">
+          <a class="nav-link" href="/zh-cn/archives/">
+            <i class="fas fa-fw fa-file-archive"></i>归档
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/zh-cn/categories/">
+            <i class="fas fa-fw fa-folder"></i>分类
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/zh-cn/tags/">
+            <i class="fas fa-fw fa-tags"></i>标签
+          </a>
+        </li><li class="nav-item">
+          <a class="nav-link" href="/zh-cn/series/">
+            <i class="fas fa-fw fa-columns"></i>专栏
+          </a>
+        </li><li class="nav-item dropdown">
+          <a class="nav-link" id="navbarDropdown-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-fw fa-chevron-circle-down"></i>链接
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown-dropdown"><li>
+              <a class="dropdown-item"
+                href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">
+                themes
+              </a>
+            </li><li>
+              <a class="dropdown-item"
+                href="https://youzack.com" target="_blank" rel="noopener noreferrer">
+                youzack
+              </a>
+            </li></ul>
+        </li><li class="nav-item dropdown">
+  <a class="nav-link" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <i class="fas fa-fw fa-language"></i> 简体中文
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="languageDropdown"><li><a class="dropdown-item" href="/en/">English</a></li></ul>
+</li><li class="nav-item">
+  <a class="nav-link" data-bs-toggle="offcanvas" href="#offcanvasSettings" role="button"
+    aria-controls="offcanvasSettings">
+    <i class="fas fa-fw fa-sliders-h"></i> 设置
+  </a>
+</li>
+
+<div class="offcanvas offcanvas-end surface h-100" tabindex="-1" id="offcanvasSettings"
+  aria-labelledby="offcanvasSettingsLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" w id="offcanvasSettingsLabel"><i class="fas fa-fw fa-sliders-h"></i> 设置</h5>
+    <a role="button" data-bs-dismiss="offcanvas" aria-label="Close">
+      <span class="fas fa-2x fa-fw fa-times"></span>
+    </a>
+  </div>
+  <div class="offcanvas-body"><section class="setting">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-adjust"></i> 模式</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" id="modeSwitcher">
+      </div>
+    </div>
+  </form>
+</section>
+<section class="setting">
+  <form class="font-size-switcher-form row">
+    <div class="col-auto">
+      <label for="fontSize" class="form-label"><i class="fas fa-fw fa-font"></i> 字体大小</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <input type="range" class="form-range" min="-2" max="2" id="fontSize">
+    </div>
+  </form>
+</section>
+
+<section class="setting palettes">
+  <form class="row">
+    <div class="col-auto">
+      <label><i class="fas fa-fw fa-palette"></i> 配色</label>
+    </div>
+    <div class="col-auto ms-auto">
+      <span id="btnPalette" class="btn btn-sm"><i class="fas fa-eye-dropper"></i></span>
+    </div>
+  </form>
+  <div class="container mt-2 visually-hidden" id="palettePicker">
+    <div class="btn-group"><button type="button" id="palette-blue" title="蓝色" 
+          class="btn btn-sm palette bg-blue d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-blue-gray" title="蓝灰色" 
+          class="btn btn-sm palette bg-blue-gray d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-brown" title="棕色" 
+          class="btn btn-sm palette bg-brown d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-cyan" title="青色" 
+          class="btn btn-sm palette bg-cyan d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-green" title="绿色" 
+          class="btn btn-sm palette bg-green d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-indigo" title="靛青色" 
+          class="btn btn-sm palette bg-indigo d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-orange" title="橙色" 
+          class="btn btn-sm palette bg-orange d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-pink" title="粉色" 
+          class="btn btn-sm palette bg-pink d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-purple" title="紫色" 
+          class="btn btn-sm palette bg-purple d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-red" title="红色" 
+          class="btn btn-sm palette bg-red d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-teal" title="蓝绿色" 
+          class="btn btn-sm palette bg-teal d-flex align-items-center justify-content-center">
+        </button><button type="button" id="palette-yellow" title="黄色" 
+          class="btn btn-sm palette bg-yellow d-flex align-items-center justify-content-center">
+        </button></button>
+    </div>
+  </div>
+</section></div>
+</div></ul>
+    </div>
+  </div>
+</nav>
+</header>
+<main role="main" class="container">
+      <div class="row content">
+<div class="col-lg-8">
+  <div class="container"><nav class="row" aria-label="breadcrumb">
+  <ol class="breadcrumb surface"><li class="breadcrumb-item"><a href="/zh-cn/">主页</a></li><li class="breadcrumb-item"><a href="/zh-cn/posts/">文章</a></li><li class="breadcrumb-item active">背包九讲-前三讲</li></ol>
+</nav><article class="post row surface"><div class="post-panel-wrapper">
+  <div class="post-panel d-flex flex-column">
+    <a id="sidebarToggler" class="action d-none d-lg-block" role="button">
+  <i class="fas fa-fw fa-expand-alt fa-rotate-45"></i>
+</a>
+  
+    
+
+    
+    <a class="action" data-bs-container="body" data-bs-toggle="popover" data-bs-html="true" data-bs-placement="bottom"
+  data-bs-trigger="focus" tabindex="0"
+  data-bs-content="&lt;a target=&#34;_blank&#34; rel=&#34;license noopener noreferrer&#34; href=&#34;https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh&#34;&gt;CC BY-NC-ND 4.0 &lt;i class=&#34;fab fa-fw fa-creative-commons&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-by&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nc&#34;&gt;&lt;/i&gt;&lt;i class=&#34;fab fa-fw fa-creative-commons-nd&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+">
+  <i class="fas fa-fw fa-copyright"></i>
+</a>
+    <a id="btnTOC" class="fas fa-fw fa-list-alt" data-bs-toggle="offcanvas" href="#offcanvasTOC" aria-controls="offcanvasTOC" role="button">
+</a>
+  </div>
+</div>
+<h1 class="post-title my-3">背包九讲-前三讲
+</h1><div class="post-meta mb-3"><span class="post-date me-2">
+    <i class="fas fa-fw fa-calendar-alt"></i>2021-12-07
+  </span><span class="post-taxonomies"><a href="/zh-cn/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="post-taxonomy">动态规划</a></span>
+</div>
+<div class="offcanvas offcanvas-end surface" tabindex="-1" id="offcanvasTOC" aria-labelledby="offcanvasTOCLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasTOCLabel">目录</h5>
+    <a role="button" data-bs-dismiss="offcanvas" aria-label="Close">
+      <span class="fas fa-2x fa-fw fa-times"></span>
+    </a>
+  </div>
+  <div class="offcanvas-body">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#0-1-背包">0-1 背包</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#完全背包">完全背包</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#多重背包">多重背包</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div><div class="post-content mb-3"><p>介绍背包九讲中的 0-1背包，完全背包，多重背包问题。</p>
+<h2 id="0-1-背包">0-1 背包</h2>
+<p>$n$ 个物品，第 $i$ 个物品体积为 $v_i$， 价值为 $w_i$ 。给你一个容量为 $C$ 的背包，求装入背包的物品总价值最大是多少？</p>
+<h4 id="解答">解答</h4>
+<p>令 $dp[i][j]$ 表示拿第 $i$ 个物品，体积为 $j$ 时的最大值</p>
+<p>$dp[i][j] = \max(dp[i-1][j-v[i]]+w[i],dp[i-1][j])$</p>
+<p>由于每个 $dp[i][\cdot]$ 只与 $dp[i-1][\cdot]$ 有关，故直接用一维数组保存即可</p>
+<p>复杂度 $\mathcal{O} (n^2)$</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="ln">1</span><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="ln">2</span>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">C</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+<span class="ln">3</span>        <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">+</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+<span class="ln">4</span>    <span class="p">}</span>
+<span class="ln">5</span><span class="p">}</span>
+</code></pre></div><h2 id="完全背包">完全背包</h2>
+<p>$n$ 种物品，每种物品无穷个，第 $i$ 种物品体积为 $v_i$， 价值为 $w_i$ 。给你一个容量为 $C$ 的背包，求装入背包的物品总价值最大是多少？</p>
+<h4 id="解答-1">解答</h4>
+<p>令 $dp[i][j]$ 表示拿第 $i$ 种物品，体积为 $j$ 时的最大值</p>
+<p>$dp[i][j] = \max(dp[i-1][j-k\cdot v[i]]+k\cdot w[i])$ 其中 $k$ 为第 $i$ 种物品拿的个数</p>
+<p>由于每个 $dp[i][\cdot]$ 只与 $dp[i-1][\cdot]$ 有关，故直接用一维数组保存即可</p>
+<p>复杂度 $\mathcal{O} (n^2)$</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="ln">1</span><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="ln">2</span>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">C</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<span class="ln">3</span>        <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">+</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+<span class="ln">4</span>    <span class="p">}</span>
+<span class="ln">5</span><span class="p">}</span>
+</code></pre></div><h2 id="多重背包">多重背包</h2>
+<p>$n$ 种物品，第 $i$ 种物品个数为 $s_i$，体积为 $v_i$， 价值为 $w_i$ 。给你一个容量为 $C$ 的背包，求装入背包的物品总价值最大是多少？</p>
+<h4 id="解答-2">解答</h4>
+<p>令 $dp[i][j]$ 表示拿第 $i$ 种物品，体积为 $j$ 时的最大值</p>
+<p>$dp[i][j] = \max(dp[i-1][j-k\cdot v[i]]+k\cdot w[i]),\ (0\leq k\leq s_i)$ 其中 $k$ 为第 $i$ 种物品拿的个数</p>
+<p>由于每个 $dp[i][\cdot]$ 只与 $dp[i-1][\cdot]$ 有关，故直接用一维数组保存即可</p>
+<p>将其转化为 0-1 背包 直接算复杂度为 $\mathcal O(n\sum_{i=1}^{n} s_i)$，下面介绍几种优化</p>
+<h5 id="二进制优化">二进制优化</h5>
+<p>可以将 $s_i$ 件物品拆分成 $1,2,4,8,\cdots,2^{k-1},s_i-2^{k}+1$ 件物品的组合。例如价值为 $3$，体积为 $4$，数量为 $10$ 的物品，可以拆成 $1+2+4+3$ 转化为价值为 $(3,6,12,8)$，体积为 $(4,8,16,12)$ 数量均为 $1$ 的 $4$ 件物品。每个 $s_i$ 都能转化成 $\lceil \log_2(s_i+1) \rceil$ 件物品，再利用 0-1 背包 求解即可。</p>
+<p>**为何这样转换之后答案仍然对呢？**这是因为 $\forall x\in[0,s_i]$，总可以由 $s_i$ 件物品转化成的 $\lceil \log_2(s_i+1) \rceil$ 件物品的某个组合得到。以上例说明：$10$ 拆成 $1+2+4+3$。那么有
+$$
+0=0, 1=1, 2=2, 3=3, 4=4, 5=1+4 , 6=2+4 \\ 7=1+2+4,8=1+4+3,9=2+4+3,10=1+2+3+4
+$$</p>
+<p>复杂度 $\mathcal O(n^2\log_2 n)$</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="ln">1</span><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//第 i 个物品
+</span><span class="ln">2</span><span class="c1"></span>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-=</span> <span class="n">k</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="n">min</span><span class="p">(</span><span class="n">k</span><span class="o">&lt;&lt;</span><span class="mi">1</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="p">{</span> <span class="c1">//二进制优化
+</span><span class="ln">3</span><span class="c1"></span>        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">C</span><span class="p">;</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="n">k</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+<span class="ln">4</span>            <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="n">k</span><span class="o">*</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">+</span> <span class="n">k</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span>
+<span class="ln">5</span>        <span class="p">}</span>
+<span class="ln">6</span>    <span class="p">}</span>
+<span class="ln">7</span><span class="p">}</span>
+</code></pre></div><h5 id="单调队列优化">单调队列优化</h5>
+<p>对于每种物品都有</p>
+<p>$dp[j] = \max(dp[j-v]+w,dp[j-2v]+2w,\cdots,dp[j-sv]+sw)$</p>
+<p>$dp[j+v] = \max(dp[j]+w,dp[j-v]+2w,dp[j-2v]+3w,\cdots,dp[j-(s-1)v]+sw)$</p>
+<p>可以看出 $dp[j]$ 后面的 $max$ 求值和 $dp[j+v]$ 的 $max$ 求值是有重复的，所有项全都加上一个 $w$ 最大值不变。只要对两端的项再处理一下即可。</p>
+<p>复杂度 $\mathcal{O} (n^2)$</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="ln"> 1</span><span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//第 i 种物品
+</span><span class="ln"> 2</span><span class="c1"></span>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="n">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//余数从 0 to v[j]-1
+</span><span class="ln"> 3</span><span class="c1"></span>        <span class="n">deque</span><span class="o">&lt;</span><span class="n">Pack</span><span class="o">&gt;</span> <span class="n">Q</span><span class="p">;</span> <span class="c1">//单调递减队列
+</span><span class="ln"> 4</span><span class="c1"></span>        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">k</span><span class="p">,</span> <span class="n">ord</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;=</span> <span class="n">C</span><span class="p">;</span> <span class="n">j</span><span class="o">+=</span><span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">ord</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">//dp[j] 为 j 容量的背包最大价值
+</span><span class="ln"> 5</span><span class="c1"></span>            <span class="kt">int</span> <span class="n">value</span> <span class="o">=</span> <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">-</span> <span class="n">ord</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="ln"> 6</span>            <span class="k">while</span><span class="p">(</span><span class="o">!</span><span class="n">Q</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">&amp;&amp;</span> <span class="n">Q</span><span class="p">.</span><span class="n">back</span><span class="p">().</span><span class="n">value</span> <span class="o">&lt;=</span> <span class="n">value</span><span class="p">)</span> <span class="n">Q</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span>
+<span class="ln"> 7</span>            <span class="n">Q</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">Pack</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">ord</span><span class="p">));</span>
+<span class="ln"> 8</span>            <span class="k">if</span><span class="p">(</span><span class="n">ord</span> <span class="o">-</span> <span class="n">Q</span><span class="p">.</span><span class="n">front</span><span class="p">().</span><span class="n">order</span> <span class="o">&gt;</span> <span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="n">Q</span><span class="p">.</span><span class="n">pop_front</span><span class="p">();</span> <span class="c1">//个数超出
+</span><span class="ln"> 9</span><span class="c1"></span>            <span class="n">dp</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">Q</span><span class="p">.</span><span class="n">front</span><span class="p">().</span><span class="n">value</span> <span class="o">+</span> <span class="n">ord</span><span class="o">*</span><span class="n">w</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+<span class="ln">10</span>        <span class="p">}</span>
+<span class="ln">11</span>    <span class="p">}</span>
+<span class="ln">12</span><span class="p">}</span>
+</code></pre></div></div><hr /><div class="post-navs d-flex mb-3 justify-content-between">
+  <div class="post-nav w-50"><div class="prev-post btn btn-sm">
+      <a href="/zh-cn/posts/%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86/">Markdown文本处理
+</a>
+    </div></div>
+  <div class="post-nav flex-row-reverse"></div>
+</div><section class="related-posts">
+    <h3>相关文章</h3>
+    <ul class="related-posts"><li><a href="/zh-cn/posts/%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86/">Markdown文本处理
+</a></li><li><a href="/zh-cn/posts/%E5%BA%94%E7%94%A8%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E5%9F%BA%E7%A1%80/">应用数理统计理论篇考试教程
+</a></li><li><a href="/zh-cn/posts/%E5%BF%AB%E9%80%9F%E4%B9%98/">快速乘
+</a></li><li><a href="/zh-cn/posts/%E9%80%86%E5%85%83/">逆元
+</a></li></ul>
+  </section></article><div class="post-comments surface row"><script src="https://utteranc.es/client.js"
+  repo="Taunl/blog-comments"
+  issue-term="pathname"
+  label="comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async>
+</script></div></div>
+</div><aside class="col-lg-4 sidebar d-flex">
+  <div class="container"><section class="profile surface row text-center">
+  <div class="col-12 d-flex align-items-center justify-content-center"><img class="profile-avatar rounded-circle" alt="Lunat" src="/images/profile.png"
+   width="421" height="423" loading="lazy" />
+</div>
+  <div class="col-12 profile-meta"><div class="profile-name">Lunat</div><div class="profile-bio">Acmer, Cer</div><div class="profile-company"><i class="fas fa-fw fa-building"></i>SIT</div><div class="profile-location"><i class="fas fa-fw fa-map-marker-alt"></i>Shanghai, China</div></div>
+</section>
+  <section class="featured-posts row surface">
+    <h4>精选文章</h4>
+    <ul><li><a href="/zh-cn/posts/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">背包九讲-前三讲
+</a></li><li><a href="/zh-cn/posts/%E5%BF%AB%E9%80%9F%E4%B9%98/">快速乘
+</a></li><li><a href="/zh-cn/posts/%E9%80%86%E5%85%83/">逆元
+</a></li></ul>
+  </section><section class="recent-posts row surface">
+  <h4>最近文章</h4>
+  <ul><li><a href="/zh-cn/posts/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/">背包九讲-前三讲
+</a></li><li><a href="/zh-cn/posts/%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86/">Markdown文本处理
+</a></li><li><a href="/zh-cn/posts/%E5%BA%94%E7%94%A8%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A1%E5%9F%BA%E7%A1%80/">应用数理统计理论篇考试教程
+</a></li><li><a href="/zh-cn/posts/%E5%BF%AB%E9%80%9F%E4%B9%98/">快速乘
+</a></li><li><a href="/zh-cn/posts/%E9%80%86%E5%85%83/">逆元
+</a></li></ul>
+</section><section class="taxonomy-categories row surface">
+      <h4>
+        <a href="/zh-cn/categories">分类</a>
+      </h4>
+      <div><a href="/zh-cn/categories/html/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="HTML">
+          HTML <span class="badge rounded-pill">1</span>
+        </a><a href="/zh-cn/categories/misc/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="MISC">
+          MISC <span class="badge rounded-pill">1</span>
+        </a><a href="/zh-cn/categories/temp/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="temp">
+          temp <span class="badge rounded-pill">1</span>
+        </a><a href="/zh-cn/categories/%E6%95%B0%E8%AE%BA/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="数论">
+          数论 <span class="badge rounded-pill">1</span>
+        </a></div>
+    </section><section class="taxonomy-series row surface">
+      <h4>
+        <a href="/zh-cn/series">专栏</a>
+      </h4>
+      <div><a href="/zh-cn/series/%E5%BA%95%E5%B1%82%E4%BC%98%E5%8C%96/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="底层优化">
+          底层优化 <span class="badge rounded-pill">1</span>
+        </a></div>
+    </section><section class="taxonomy-tags row surface">
+      <h4>
+        <a href="/zh-cn/tags">标签</a>
+      </h4>
+      <div><a href="/zh-cn/tags/math/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="Math">
+          Math <span class="badge rounded-pill">2</span>
+        </a><a href="/zh-cn/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="动态规划">
+          动态规划 <span class="badge rounded-pill">1</span>
+        </a><a href="/zh-cn/tags/%E9%80%86%E5%85%83/" class="post-taxonomy rounded btn btn-sm me-2 mb-2" title="逆元">
+          逆元 <span class="badge rounded-pill">1</span>
+        </a></div>
+    </section></div>
+</aside>
+</div>
+    </main><footer class="footer mt-auto py-3 text-center container"><nav class="social-links nav my-2 justify-content-center"><a class="nav-link social-link" href="mailto:im.lunat@outlook.com" title="Email">
+      <i class="fas fa-fw fa-2x fa-envelope"></i>
+    </a><a class="nav-link social-link" target="_blank" href="https://github.com/Taunl" title="GitHub" rel="noopener noreferrer">
+        <i class="fa-fw fa-2x fab fa-github"></i>
+      </a></nav>
+<div class="copyright mb-2">
+  Copyright © 2020-2021 Lunat. All Rights Reserved.
+</div>
+<div class="powered-by mb-2">
+  Powered by <a href="https://gohugo.io" target="_blank" rel="noopener noreferrer">Hugo</a> and the <a href="https://github.com/razonyang/hugo-theme-bootstrap" target="_blank" rel="noopener noreferrer">Bootstrap</a> theme.
+</div></footer>
+<a id="btnScrollToTop" class="btn-scroll-to-top">
+  <i class="fas fa-fw fa-chevron-circle-up fa-2x"></i>
+</a>
+</body>
+</html>
